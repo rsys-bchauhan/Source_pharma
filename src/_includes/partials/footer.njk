@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--light" href="/">
+        <img class="brand-logo" src="{{ site.logo }}" alt="{{ site.name }} logo" width="40" height="40">
+        <span class="brand-name">{{ site.name }}</span>
+      </a>
+      <p>{{ site.description }}</p>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        {%- for item in navigation %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul class="footer-contact">
+        <li>{{ site.contact.address }}</li>
+        <li><a href="tel:{{ site.contact.phone | replace(' ', '') }}">{{ site.contact.phone }}</a></li>
+        <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+      </ul>
+      {%- if site.social.linkedin or site.social.twitter or site.social.facebook %}
+      <ul class="social">
+        {% if site.social.linkedin %}<li><a href="{{ site.social.linkedin }}" rel="noopener" target="_blank">LinkedIn</a></li>{% endif %}
+        {% if site.social.twitter %}<li><a href="{{ site.social.twitter }}" rel="noopener" target="_blank">X / Twitter</a></li>{% endif %}
+        {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}" rel="noopener" target="_blank">Facebook</a></li>{% endif %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; {{ "" | year }} {{ site.legalName }}. All rights reserved.</p>
+      <p><a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>

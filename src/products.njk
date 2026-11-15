@@ -1,0 +1,41 @@
+---
+layout: layouts/page.njk
+title: Products
+eyebrow: Our Portfolio
+heading: Our Products
+eleventyComputed:
+  lead: "{{ site.name }} offers quality formulations across key therapeutic areas."
+---
+{# Products are loaded from src/_data/products.json. Edit that file to add, remove or change products. #}
+{%- set categories = products | map("category") | unique %}
+
+<section class="section">
+  <div class="container">
+    <div class="filters" role="toolbar" aria-label="Filter products by category">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      {%- for cat in categories %}
+      <button class="filter-btn" data-filter="{{ cat | slug }}" aria-pressed="false">{{ cat }}</button>
+      {%- endfor %}
+    </div>
+
+    <div class="grid grid-3">
+      {%- for product in products %}
+      <article class="card product-card" data-category="{{ product.category | slug }}">
+        <span class="badge">{{ product.category }}</span>
+        <h3>{{ product.name }}</h3>
+        <p class="strength">{{ product.strength }}</p>
+        <p>{{ product.description }}</p>
+        <ul class="product-meta">
+          <li><span>Dosage form</span><span>{{ product.form }}</span></li>
+          <li><span>Indication</span><span>{{ product.indication }}</span></li>
+          <li><span>Pack size</span><span>{{ product.pack }}</span></li>
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> The product information on this page is for general information only and is not medical advice. Prescription medicines must be used only under the supervision of a registered medical practitioner. Product availability may vary by region.
+    </div>
+  </div>
+</section>

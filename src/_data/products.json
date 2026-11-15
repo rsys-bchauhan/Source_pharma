@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Paracetamol Tablets",
+    "strength": "500 mg",
+    "form": "Tablet",
+    "category": "Analgesics & Antipyretics",
+    "indication": "Relief of mild to moderate pain and fever.",
+    "description": "Film-coated tablets for fast and effective relief from headache, body ache and fever.",
+    "pack": "10 x 10 Tablets",
+    "featured": true
+  },
+  {
+    "name": "Ibuprofen Oral Suspension",
+    "strength": "100 mg / 5 ml",
+    "form": "Suspension",
+    "category": "Analgesics & Antipyretics",
+    "indication": "Pain, inflammation and fever in children.",
+    "description": "Pleasant-tasting, sugar-free paediatric suspension with an accurate dosing cup.",
+    "pack": "60 ml Bottle",
+    "featured": false
+  },
+  {
+    "name": "Amoxicillin Capsules",
+    "strength": "250 mg",
+    "form": "Capsule",
+    "category": "Anti-infectives",
+    "indication": "Bacterial infections of the respiratory tract, ear and urinary tract.",
+    "description": "Broad-spectrum penicillin antibiotic made to strict quality standards.",
+    "pack": "10 x 10 Capsules",
+    "featured": true
+  },
+  {
+    "name": "Azithromycin Tablets",
+    "strength": "500 mg",
+    "form": "Tablet",
+    "category": "Anti-infectives",
+    "indication": "Respiratory, skin and soft-tissue infections.",
+    "description": "Macrolide antibiotic with a convenient once-daily, three-day dosing schedule.",
+    "pack": "1 x 3 Tablets",
+    "featured": false
+  },
+  {
+    "name": "Metformin Hydrochloride Tablets",
+    "strength": "500 mg",
+    "form": "Tablet",
+    "category": "Diabetes Care",
+    "indication": "Management of type 2 diabetes mellitus.",
+    "description": "First-line therapy for blood-glucose control, also available as extended-release.",
+    "pack": "10 x 10 Tablets",
+    "featured": true
+  },
+  {
+    "name": "Amlodipine Tablets",
+    "strength": "5 mg",
+    "form": "Tablet",
+    "category": "Cardiovascular",
+    "indication": "Hypertension and chronic stable angina.",
+    "description": "Long-acting calcium-channel blocker for once-daily blood-pressure control.",
+    "pack": "10 x 10 Tablets",
+    "featured": false
+  },
+  {
+    "name": "Omeprazole Capsules",
+    "strength": "20 mg",
+    "form": "Capsule",
+    "category": "Gastroenterology",
+    "indication": "Acid reflux, gastric and duodenal ulcers.",
+    "description": "Delayed-release proton-pump inhibitor capsules for long-lasting acid control.",
+    "pack": "10 x 10 Capsules",
+    "featured": true
+  },
+  {
+    "name": "Oral Rehydration Salts",
+    "strength": "WHO Formula",
+    "form": "Sachet",
+    "category": "Gastroenterology",
+    "indication": "Prevention and treatment of dehydration due to diarrhoea.",
+    "description": "Orange-flavoured, WHO-recommended low-osmolarity ORS powder.",
+    "pack": "21.8 g Sachet",
+    "featured": false
+  },
+  {
+    "name": "Cetirizine Tablets",
+    "strength": "10 mg",
+    "form": "Tablet",
+    "category": "Respiratory & Allergy",
+    "indication": "Allergic rhinitis and urticaria.",
+    "description": "Non-drowsy, once-daily antihistamine for seasonal and year-round allergies.",
+    "pack": "10 x 10 Tablets",
+    "featured": false
+  },
+  {
+    "name": "Vitamin D3 Soft Gelatin Capsules",
+    "strength": "60,000 IU",
+    "form": "Softgel",
+    "category": "Nutrition & Wellness",
+    "indication": "Vitamin D deficiency.",
+    "description": "High-strength cholecalciferol softgels for weekly supplementation.",
+    "pack": "4 Capsules",
+    "featured": false
+  }
+]

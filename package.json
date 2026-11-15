@@ -1,0 +1,18 @@
+{
+  "name": "xyz-pharma-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static corporate website for a pharmaceutical company, built with Eleventy.",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  }
+}

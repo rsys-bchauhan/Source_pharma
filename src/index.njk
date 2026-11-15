@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+title: Home
+permalink: /
+---
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Welcome to {{ site.name }}</p>
+    <h1>{{ site.tagline }}</h1>
+    <p class="lead">{{ site.description }}</p>
+    <div class="hero-actions">
+      <a class="btn btn--light" href="/products/">Explore Products</a>
+      <a class="btn btn--ghost-light" href="/about/">About Us</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>{{ "" | year - site.foundedYear }}+</strong><span>Years of experience</span></div>
+      <div><strong>{{ products.length }}+</strong><span>Quality formulations</span></div>
+      <div><strong>15+</strong><span>Countries served</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Healthcare you can trust</h2>
+      <p>From research to the pharmacy shelf, {{ site.shortName }} makes medicines that meet strict quality standards and stay within patients' reach.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3L14 9V3"/></svg></div>
+        <h3>Research &amp; Development</h3>
+        <p>Our scientists develop safe, effective and stable formulations for everyday therapies.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l5 3V8l5 3V4h4v17"/></svg></div>
+        <h3>Manufacturing</h3>
+        <p>Our modern plants follow Good Manufacturing Practice (GMP) and produce tablets, capsules, liquids and more.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Quality Assurance</h3>
+        <p>We test every batch thoroughly before it leaves our facility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our portfolio</p>
+      <h2>Featured Products</h2>
+      <p>A selection from our range of trusted formulations.</p>
+    </div>
+    <div class="grid grid-4">
+      {%- for product in products %}{% if product.featured %}
+      <article class="card product-card">
+        <span class="badge">{{ product.category }}</span>
+        <h3>{{ product.name }}</h3>
+        <p class="strength">{{ product.strength }} · {{ product.form }}</p>
+        <p>{{ product.indication }}</p>
+      </article>
+      {%- endif %}{% endfor %}
+    </div>
+    <p style="text-align:center;margin-top:2.5rem"><a class="btn btn--primary" href="/products/">View All Products</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Partner with {{ site.name }}</h2>
+        <p>Are you a distributor, healthcare professional or business partner? Let's talk.</p>
+      </div>
+      <a class="btn btn--light" href="/contact/">Contact Us</a>
+    </div>
+  </div>
+</section>
