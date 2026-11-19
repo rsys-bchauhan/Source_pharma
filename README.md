@@ -6,7 +6,7 @@ A professional static website for a pharmaceutical company, built with [Eleventy
 
 | Page | File | Notes |
 |------|------|-------|
-| Home | `src/index.njk` | Hero, highlights, featured products, call to action |
+| Home | `src/index.njk` | Hero slider, feature boxes, welcome, categories, speciality, latest products, partner banner, counters, testimonials |
 | About | `src/about.njk` | Sample content – replace with real details |
 | Products | `src/products.njk` | Generated from `src/_data/products.json`, with a category filter |
 | Quality | `src/quality.njk` | **Blank** – fill in your content |
@@ -30,7 +30,7 @@ Edit **`src/_data/site.json`**:
   "logo": "/assets/images/logo.svg",
   "favicon": "/assets/images/favicon.svg",
   "contact": { "email": "...", "phone": "...", "address": "...", "hours": "..." },
-  "social": { "linkedin": "", "twitter": "", "facebook": "" }
+  "social": { "facebook": "", "instagram": "", "linkedin": "", "twitter": "" }  // icons appear only when a URL is set
 }
 ```
 
@@ -55,12 +55,18 @@ Edit **`src/_data/products.json`**. Each product looks like this:
 }
 ```
 
-- New categories appear in the filter buttons automatically.
-- Products with `"featured": true` are shown on the Home page.
+- New categories appear in the filter buttons and footer automatically. The first four are shown as "Categories" on the Home page.
+- Products with `"featured": true` are shown as "Latest Products" on the Home page.
+- Product thumbnails are drawn automatically from `form` (Tablet, Capsule, Softgel, Suspension/Syrup, Sachet).
+- Category links use the URL hash, e.g. `/products/#diabetes-care` opens the Products page pre-filtered.
+
+## Layout
+
+All pages share the same frame: a navy top bar (address, phone, email, social icons), a white header with an orange underline and a "Product List" button, a banner with breadcrumb on inner pages (`src/_includes/partials/page-hero.njk`), and a dark four-column footer. Sample text on the Home page (hero, testimonials, counters) should be replaced with your own.
 
 ## Change colours
 
-The theme colours are CSS variables at the top of `src/assets/css/styles.css` (`--primary`, `--accent`, etc.).
+The theme colours are CSS variables at the top of `src/assets/css/styles.css` (`--primary` navy, `--secondary` royal blue, `--accent` orange-red, etc.). Fonts are Raleway (headings) and Roboto (body), loaded in `src/_includes/layouts/base.njk`.
 
 ## Run locally
 

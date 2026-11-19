@@ -1,13 +1,13 @@
 {
-  "name": "XYZ Pharmaceuticals",
-  "shortName": "XYZ",
-  "legalName": "XYZ Pharmaceuticals Pvt. Ltd.",
+  "name": "Crentix Pharmaceuticals",
+  "shortName": "Crentix",
+  "legalName": "Crentix Pharmaceuticals Pvt. Ltd.",
   "tagline": "Caring for Life, Committed to Quality",
-  "description": "XYZ Pharmaceuticals develops, manufactures and markets high-quality, affordable medicines for patients and healthcare professionals.",
+  "description": "Crentix Pharmaceuticals develops, manufactures and markets high-quality, affordable medicines for patients and healthcare professionals.",
   "url": "https://example.com",
   "logo": "/assets/images/logo.svg",
   "favicon": "/assets/images/favicon.svg",
-  "themeColor": "#0b5ed7",
+  "themeColor": "#073f93",
   "language": "en",
   "foundedYear": 2005,
   "contact": {
@@ -17,6 +17,7 @@
     "hours": "Mon – Fri, 9:00 AM – 6:00 PM"
   },
   "social": {
+    "instagram": "",
     "linkedin": "",
     "twitter": "",
     "facebook": ""

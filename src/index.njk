@@ -3,79 +3,205 @@ layout: layouts/base.njk
 title: Home
 permalink: /
 ---
-<section class="hero">
-  <div class="container">
-    <p class="eyebrow">Welcome to {{ site.name }}</p>
-    <h1>{{ site.tagline }}</h1>
-    <p class="lead">{{ site.description }}</p>
-    <div class="hero-actions">
-      <a class="btn btn--light" href="/products/">Explore Products</a>
-      <a class="btn btn--ghost-light" href="/about/">About Us</a>
+{%- from "partials/macros.njk" import formArt %}
+{%- set categories = products | map("category") | unique %}
+{# SAMPLE CONTENT: hero text, testimonials and counters below are examples – replace them with your own. #}
+
+<section class="hero-slider" aria-roledescription="carousel" aria-label="Highlights">
+  <div class="slide is-active" aria-roledescription="slide" aria-label="1 of 2">
+    <div class="container slide-content">
+      <p class="slide-kicker">Welcome to {{ site.name }}</p>
+      <h1>We Take Care Of<br>Your Healthy Life</h1>
+      <p>{{ site.description }}</p>
+      <a class="btn btn--accent btn--square" href="/products/">See All Products <span aria-hidden="true">&rarr;</span></a>
     </div>
-    <div class="hero-stats">
-      <div><strong>{{ "" | year - site.foundedYear }}+</strong><span>Years of experience</span></div>
-      <div><strong>{{ products.length }}+</strong><span>Quality formulations</span></div>
-      <div><strong>15+</strong><span>Countries served</span></div>
+  </div>
+  <div class="slide slide--alt" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true">
+    <div class="container slide-content">
+      <p class="slide-kicker">{{ site.tagline }}</p>
+      <h1>Bringing Quality<br>Medicines to Life</h1>
+      <p>Research, GMP manufacturing and strict quality control – for the whole family.</p>
+      <a class="btn btn--accent btn--square" href="/about/" tabindex="-1">About Us <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+  <div class="slider-dots" role="tablist" aria-label="Choose slide">
+    <button role="tab" class="is-active" aria-selected="true" aria-label="Slide 1"></button>
+    <button role="tab" aria-selected="false" aria-label="Slide 2"></button>
+  </div>
+</section>
+
+<section class="feature-boxes">
+  <div class="container feature-boxes-grid">
+    <div class="feature-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21h18M5 21V8l5 3V8l5 3V4h4v17"/><path d="M9 15h2M13 15h2"/></svg>
+      <h3>Pharma Manufacturer</h3>
+      <p>GMP-compliant manufacturing of tablets, capsules, liquids and more.</p>
+    </div>
+    <div class="feature-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7 15h10"/></svg>
+      <h3>Research &amp; Development</h3>
+      <p>Our scientists develop safe, effective and stable formulations.</p>
+    </div>
+    <div class="feature-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <h3>Quality Assurance</h3>
+      <p>Every batch is tested thoroughly before it leaves our facility.</p>
+    </div>
+    <div class="feature-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 7h13v10H1zM14 10h4l3 3v4h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+      <h3>Distribution</h3>
+      <p>A wide network of distributors and stockists across the country.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">What we do</p>
-      <h2>Healthcare you can trust</h2>
-      <p>From research to the pharmacy shelf, {{ site.shortName }} makes medicines that meet strict quality standards and stay within patients' reach.</p>
+  <div class="container welcome">
+    <div class="welcome-visual" aria-hidden="true">
+      <div class="welcome-art">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 2h6v7h7v6h-7v7H9v-7H2V9h7z"/></svg>
+      </div>
+      <div class="welcome-badge"><strong>{{ "" | year - site.foundedYear }}+</strong><span>Years of<br>Experience</span></div>
     </div>
-    <div class="grid grid-3">
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3L14 9V3"/></svg></div>
-        <h3>Research &amp; Development</h3>
-        <p>Our scientists develop safe, effective and stable formulations for everyday therapies.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l5 3V8l5 3V4h4v17"/></svg></div>
-        <h3>Manufacturing</h3>
-        <p>Our modern plants follow Good Manufacturing Practice (GMP) and produce tablets, capsules, liquids and more.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Quality Assurance</h3>
-        <p>We test every batch thoroughly before it leaves our facility.</p>
-      </div>
+    <div>
+      <h2 class="welcome-title">Welcome To <span>{{ site.name }}.</span></h2>
+      <p class="welcome-sub">{{ site.tagline }}</p>
+      <p class="justify">{{ site.name }} is a pharmaceutical company that develops, manufactures and markets high-quality, affordable medicines. From research to the pharmacy shelf, {{ site.shortName }} makes medicines that meet strict quality standards and stay within patients' reach. Our GMP-compliant facilities and stringent quality control processes ensure that every product meets the standards healthcare professionals expect.</p>
+      <a class="btn btn--primary btn--square" href="/about/">About Us <span aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
 
 <section class="section section--alt">
   <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">Our portfolio</p>
-      <h2>Featured Products</h2>
-      <p>A selection from our range of trusted formulations.</p>
+    <div class="section-title">
+      <p>Our Product</p>
+      <h2>Categories</h2>
     </div>
-    <div class="grid grid-4">
-      {%- for product in products %}{% if product.featured %}
-      <article class="card product-card">
-        <span class="badge">{{ product.category }}</span>
-        <h3>{{ product.name }}</h3>
-        <p class="strength">{{ product.strength }} · {{ product.form }}</p>
-        <p>{{ product.indication }}</p>
-      </article>
+    <div class="grid grid-4 category-grid">
+      {%- for cat in categories %}{% if loop.index <= 4 %}
+      <a class="category-card" href="/products/#{{ cat | slug }}">
+        <span class="category-img category-img--{{ loop.index }}" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg>
+          <span class="category-detail">Detail</span>
+        </span>
+        <h3>{{ cat }}</h3>
+      </a>
       {%- endif %}{% endfor %}
     </div>
-    <p style="text-align:center;margin-top:2.5rem"><a class="btn btn--primary" href="/products/">View All Products</a></p>
+    <p class="center"><a class="btn btn--primary btn--square" href="/products/">More Categories <span aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="cta">
-      <div>
-        <h2>Partner with {{ site.name }}</h2>
-        <p>Are you a distributor, healthcare professional or business partner? Let's talk.</p>
-      </div>
-      <a class="btn btn--light" href="/contact/">Contact Us</a>
+<section class="section speciality">
+  <div class="container speciality-layout">
+  <div>
+    <div class="section-title section-title--left">
+      <p>Why Choose Us</p>
+      <h2>What&rsquo;s Our Speciality</h2>
     </div>
+    <p class="speciality-intro">At {{ site.name }}, we stand out through our commitment to quality, innovation and customer-centric solutions.</p>
+    <div class="speciality-grid">
+      <div class="speciality-item">
+        <span class="speciality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="7" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path d="M17 11l2 2 4-4"/></svg></span>
+        <div><h3>Professional Staff</h3><p>Skilled, experienced and dedicated professionals committed to quality healthcare.</p></div>
+      </div>
+      <div class="speciality-item">
+        <span class="speciality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l5 3V8l5 3V4h4v17"/></svg></span>
+        <div><h3>Manufacturing</h3><p>Modern facilities that deliver high-quality formulations at scale.</p></div>
+      </div>
+      <div class="speciality-item">
+        <span class="speciality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><h3>Quality Assurance</h3><p>Products that meet GMP and industry standards through stringent quality control.</p></div>
+      </div>
+      <div class="speciality-item">
+        <span class="speciality-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3L14 9V3"/></svg></span>
+        <div><h3>Pharmaceutical Experts</h3><p>R&amp;D and formulation development to create safe and effective products.</p></div>
+      </div>
+    </div>
+  </div>
+    <div class="speciality-art" aria-hidden="true">
+      <svg viewBox="0 0 120 90"><g transform="rotate(-30 60 45)"><rect x="15" y="30" width="90" height="32" rx="16" fill="#fff"/><path d="M60 30h29a16 16 0 0 1 0 32H60z" fill="#d63f19"/></g></svg>
+      <span class="speciality-art-label"><strong>{{ site.shortName }}</strong>Quality you can trust</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-title">
+      <p>Some of our products</p>
+      <h2>Latest Products</h2>
+    </div>
+    <div class="grid grid-4">
+      {%- for product in products %}{% if product.featured %}
+      <a class="product-tile" href="/products/#{{ product.category | slug }}">
+        <span class="product-thumb">{{ formArt(product.form) }}</span>
+        <span class="product-tile-body">
+          <h3>{{ product.name }}</h3>
+          <span class="product-tile-meta">{{ product.strength }} · {{ product.form }}</span>
+        </span>
+      </a>
+      {%- endif %}{% endfor %}
+    </div>
+    <p class="center"><a class="btn btn--primary btn--square" href="/products/">View All Products <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<section class="franchise">
+  <div class="container franchise-inner">
+    <p class="franchise-kicker">Need a Partner?</p>
+    <h2>We welcome distributors and business partners across the country</h2>
+    <a class="btn btn--accent btn--square" href="/contact/">Contact Us</a>
+  </div>
+</section>
+
+<section class="section counters">
+  <div class="container counters-grid">
+    <div class="counter">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>
+      <strong data-count="{{ "" | year - site.foundedYear }}">{{ "" | year - site.foundedYear }}+</strong><span>Years of Experience</span>
+    </div>
+    <div class="counter">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 7h13v10H1zM14 10h4l3 3v4h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+      <strong data-count="2000">2000+</strong><span>Distributors</span>
+    </div>
+    <div class="counter">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg>
+      <strong data-count="{{ products.length }}">{{ products.length }}+</strong><span>Products</span>
+    </div>
+    <div class="counter">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+      <strong data-count="15">15+</strong><span>Countries Served</span>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-title section-title--light">
+      <p>Testimonials</p>
+      <h2>What Our Partners Say</h2>
+    </div>
+    <div class="grid grid-3">
+      <figure class="testimonial">
+        <blockquote>&ldquo;Consistent quality and on-time supply. {{ site.shortName }} has been a reliable partner for our pharmacy chain.&rdquo;</blockquote>
+        <figcaption><strong>Rahul M.</strong><span>Distributor</span></figcaption>
+      </figure>
+      <figure class="testimonial">
+        <blockquote>&ldquo;Their team is responsive and knowledgeable. Product documentation is always complete and clear.&rdquo;</blockquote>
+        <figcaption><strong>Dr. S. Kapoor</strong><span>Healthcare Professional</span></figcaption>
+      </figure>
+      <figure class="testimonial">
+        <blockquote>&ldquo;A wide range of formulations at fair prices – exactly what our customers need.&rdquo;</blockquote>
+        <figcaption><strong>Neha R.</strong><span>Retail Pharmacist</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cert-strip" aria-label="Standards">
+  <div class="container cert-strip-inner">
+    <span>GMP Compliant</span><span>Quality Tested</span><span>R&amp;D Driven</span><span>Pan-India Distribution</span><span>Export Ready</span>
   </div>
 </section>

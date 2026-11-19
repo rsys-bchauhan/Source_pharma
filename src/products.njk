@@ -8,6 +8,7 @@ eleventyComputed:
 ---
 {# Products are loaded from src/_data/products.json. Edit that file to add, remove or change products. #}
 {%- set categories = products | map("category") | unique %}
+{%- from "partials/macros.njk" import formArt %}
 
 <section class="section">
   <div class="container">
@@ -21,6 +22,7 @@ eleventyComputed:
     <div class="grid grid-3">
       {%- for product in products %}
       <article class="card product-card" data-category="{{ product.category | slug }}">
+        <span class="product-thumb">{{ formArt(product.form) }}</span>
         <span class="badge">{{ product.category }}</span>
         <h3>{{ product.name }}</h3>
         <p class="strength">{{ product.strength }}</p>

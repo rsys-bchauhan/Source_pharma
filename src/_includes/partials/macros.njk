@@ -1,0 +1,25 @@
+{# Simple illustrations per dosage form, used as product thumbnails. #}
+{% macro formArt(form) %}
+{%- set f = form | lower %}
+<svg class="form-art" viewBox="0 0 120 90" aria-hidden="true">
+  {%- if "capsule" in f %}
+  <g transform="rotate(-30 60 45)"><rect x="25" y="32" width="70" height="26" rx="13" fill="#fff"/><path d="M60 32h22a13 13 0 0 1 0 26H60z" fill="#d63f19"/></g>
+  <g transform="rotate(20 80 62)" opacity=".85"><rect x="62" y="54" width="44" height="16" rx="8" fill="#fff"/><path d="M84 54h14a8 8 0 0 1 0 16H84z" fill="#ffb199"/></g>
+  {%- elif "softgel" in f %}
+  <ellipse cx="50" cy="44" rx="30" ry="18" fill="#ffd166" transform="rotate(-20 50 44)"/>
+  <ellipse cx="44" cy="38" rx="10" ry="4" fill="#fff" opacity=".6" transform="rotate(-20 44 38)"/>
+  <ellipse cx="86" cy="60" rx="18" ry="11" fill="#ffe29a" transform="rotate(15 86 60)"/>
+  {%- elif "suspension" in f or "syrup" in f %}
+  <rect x="44" y="10" width="32" height="12" rx="3" fill="#d63f19"/>
+  <path d="M48 22h24v8l8 10v38a4 4 0 0 1-4 4H44a4 4 0 0 1-4-4V40l8-10z" fill="#fff"/>
+  <rect x="44" y="50" width="32" height="20" rx="2" fill="#284bbf" opacity=".25"/>
+  {%- elif "sachet" in f %}
+  <path d="M34 16h52l-4 6 4 6v46l-4 4H38l-4-4V28l4-6z" fill="#fff"/>
+  <rect x="42" y="38" width="36" height="22" rx="3" fill="#d63f19" opacity=".85"/>
+  <path d="M34 22h52" stroke="#284bbf" stroke-dasharray="3 3" stroke-width="2"/>
+  {%- else %}
+  <circle cx="46" cy="44" r="24" fill="#fff"/><path d="M28 44h36" stroke="#cfd8ea" stroke-width="3"/>
+  <circle cx="84" cy="58" r="15" fill="#fff" opacity=".85"/><path d="M73 58h22" stroke="#cfd8ea" stroke-width="2"/>
+  {%- endif %}
+</svg>
+{% endmacro %}

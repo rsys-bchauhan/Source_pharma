@@ -1,7 +1,9 @@
-<section class="page-hero">
+<section class="page-banner">
   <div class="container">
-    {%- if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
     <h1>{{ heading or title }}</h1>
-    {%- if lead %}<p class="lead">{{ lead }}</p>{% endif %}
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">{{ site.name }}</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">{{ title }}</span>
+    </nav>
+    {%- if lead %}<p class="banner-lead">{{ lead }}</p>{% endif %}
   </div>
 </section>
