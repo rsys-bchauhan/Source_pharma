@@ -1,25 +1,25 @@
 {
-  "name": "Crentix Pharmaceuticals",
+  "name": "CRENTIX PHARMACEUTICAL",
   "shortName": "Crentix",
-  "legalName": "Crentix Pharmaceuticals Pvt. Ltd.",
-  "tagline": "Caring for Life, Committed to Quality",
-  "description": "Crentix Pharmaceuticals develops, manufactures and markets high-quality, affordable medicines for patients and healthcare professionals.",
+  "legalName": "CRENTIX PHARMACEUTICAL Pvt. Ltd.",
+  "tagline": "Innovation for Life",
+  "description": "CRENTIX PHARMACEUTICAL develops, manufactures and markets high-quality, affordable medicines for patients and healthcare professionals.",
   "url": "https://example.com",
   "logo": "/assets/images/logo.svg",
   "favicon": "/assets/images/favicon.svg",
   "themeColor": "#073f93",
   "language": "en",
-  "foundedYear": 2005,
+  "foundedYear": 2026,
   "contact": {
-    "email": "info@example.com",
+    "email": "crentispharmaceutical@gmail.com",
     "phone": "+91 00000 00000",
-    "address": "Plot No. 00, Industrial Area, City, State 000000, Country",
+    "address": "Address :- F11&12, Shree Krishna Complex , Noida Sector 5, U.P.",
     "hours": "Mon – Fri, 9:00 AM – 6:00 PM"
   },
   "social": {
-    "instagram": "",
+    "instagram": "https://www.instagram.com/site1",
     "linkedin": "",
-    "twitter": "",
-    "facebook": ""
+    "twitter": "https://x.com/site2",
+    "facebook": "https://www.facebook.com/site1"
   }
 }

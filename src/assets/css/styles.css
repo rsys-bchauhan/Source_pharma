@@ -484,8 +484,15 @@ strong { color: var(--heading); }
 .footer-links a:hover { padding-left: 4px; }
 .footer-contact li { margin-bottom: .9rem; }
 .footer-contact span { display: block; color: #fff; font-weight: 500; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
-.social-icons--footer a { background: #2a2a2a; width: 34px; height: 34px; }
-.social-icons--footer a:hover { background: var(--accent); }
+.social-icons--footer a { background: #242424; color: #fff; width: 34px; height: 34px; transition: transform .2s, background .2s, color .2s; }
+.social-icons--footer a[aria-label="Facebook"] { background: #1877f2; }
+.social-icons--footer a[aria-label="Instagram"] { background: linear-gradient(135deg, #833ab4, #e1306c 55%, #f77737); }
+.social-icons--footer a[aria-label="X / Twitter"] { border: 1px solid #555; }
+.social-icons--footer a:hover { transform: translateY(-2px); }
+.social-icons--footer a[aria-label="Facebook"]:hover { background: #0c63d4; }
+.social-icons--footer a[aria-label="Instagram"]:hover { filter: brightness(1.12); }
+.social-icons--footer a[aria-label="X / Twitter"]:hover { background: #fff; color: #111; }
+.social-icons--footer a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .footer-bottom { border-top: 1px solid #2a2a2a; padding: 1.25rem 0; font-size: .9rem; }
 .footer-bottom-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
 .footer-bottom p { margin: 0; }
